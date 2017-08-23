@@ -7,6 +7,7 @@ package com.imooc.collection;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -52,8 +53,54 @@ public class ListTest {
 
 
     }
+
+    /**
+     * 取得List中的元素
+     * @param args
+     */
+    public void testGet(){
+        System.out.print("通过for循环访问 有以下选择\n");
+
+        int size = coursesToSelect.size();
+        for(int i =0 ;i<size;i++){
+            Course tempcourse=(Course)coursesToSelect.get(i);
+            System.out.print("添加了课程:" + tempcourse.id+";"+tempcourse.name+"\n");
+        }
+    }
+
+    /**
+     * t通过迭代器便利List
+     * @param args
+     */
+    public void testIterator(){
+        Iterator it=coursesToSelect.iterator();
+        System.out.print("通过迭代器访问 有以下选择\n");
+
+        while (it.hasNext()){
+            Course cr = (Course)it.next();
+            System.out.print("添加了课程:" + cr.id+";"+cr.name+"\n");
+
+        }
+    }
+
+    /**
+     * foreach方法
+     * @param args
+     */
+    public void testForEach(){
+        System.out.print("通过foreach访问 有以下选择\n");
+
+        for(Object obj :coursesToSelect){
+            Course temp =(Course)obj;
+            System.out.print("添加了课程:" + temp.id+";"+temp.name+"\n");
+
+        }
+    }
     public static void main(String[] args){
         ListTest lt =new ListTest();
         lt.TeseAdd();
+        lt.testGet();
+        lt.testIterator();
+        lt.testForEach();
     }
 }
