@@ -96,11 +96,38 @@ public class ListTest {
 
         }
     }
+
+    /**
+     * 修改List元素
+     * @param args
+     */
+    public void testModify(){
+        coursesToSelect.set(4, new Course("7", "毛概"));
+    }
+
+    /**
+     * 删除List元素
+     * @param args
+     */
+    public void testRemove(){
+        Course cr = (Course)coursesToSelect.get(4);
+        System.out.print("我是课程"+cr.id+cr.name+"要被删了\n");
+//        coursesToSelect.remove(cr);
+//        coursesToSelect.remove(4);
+        Course [] courses = {(Course)coursesToSelect.get(4),(Course)coursesToSelect.get(3)};
+        coursesToSelect.removeAll(Arrays.asList(courses));
+
+    }
     public static void main(String[] args){
         ListTest lt =new ListTest();
         lt.TeseAdd();
         lt.testGet();
         lt.testIterator();
+        lt.testModify();
         lt.testForEach();
+        lt.testRemove();
+        lt.testForEach();
+
+
     }
 }
