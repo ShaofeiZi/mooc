@@ -118,14 +118,24 @@ public class ListTest {
         coursesToSelect.removeAll(Arrays.asList(courses));
 
     }
+
+    /**
+     * 添加奇怪的东西
+     * @param args
+     */
+    public void testType(){
+        coursesToSelect.add("我是个字符串");
+    }
     public static void main(String[] args){
         ListTest lt =new ListTest();
         lt.TeseAdd();
-        lt.testGet();
-        lt.testIterator();
-        lt.testModify();
-        lt.testForEach();
-        lt.testRemove();
+//        lt.testGet();
+//        lt.testIterator();
+//        lt.testModify();
+//        lt.testForEach();
+//        lt.testRemove();
+//        lt.testForEach();
+//        lt.testType();
         lt.testForEach();
 
 
